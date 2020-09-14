@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,500;1,600;1,900&display=swap');
+
+$Cbase:#808082;
+$Cprymari:#eeeeee;
+$Csecundary:#89939c;
+$font: 'Poppins';
+$fontSecond: 'Verdana';
+$reset: 0;
+
+*{
+    margin: $reset;
+    padding: $reset;
+    text-decoration: none;
+    list-style: none;
+}
+
+.container{
+    width: 90%;
+    margin: 40px auto;
+    height: auto;
+    border: 1px solid rgba($color: #eeeeee, $alpha: .8);
+    box-shadow: 0px 0px 10px rgba($color: #cccccc, $alpha: 1.0);
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 75px;
+        padding: 5px;
+        border-bottom: 1px solid rgba($color: #eeeeee, $alpha: .8);
+        .logotipo{
+            flex-grow: 1;
+            flex-basis: 60%;
+            margin-left: 2%;
+            h1{
+                text-transform: uppercase;
+                font-family: $font;
+                font-style: italic;
+                font-weight: 500;
+                font-size: 35px;
+                letter-spacing: 1px;
+            }
+        }
+        .menu{
+            flex-grow: 1;
+            flex-basis: 30%;
+            height: 100%;
+            margin-right: 2%;
+            ul{
+                display: flex;
+                flex-direction: row;
+                flex-wrap:wrap ;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                li{
+                    a{
+                        color: $Csecundary;
+                        font-family:$fontSecond;
+                        text-transform: uppercase;
+                        padding:10px;
+                        transition: all 300ms;
+                    }
+                    a:hover{
+                        background-color: $Cbase;
+                        color: white;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }   
+    }
+    .content{
+        display: flex;
+        justify-content: space-between;
+        padding:20px;
+
+        .aside{
+            flex-basis: 15%;
+            margin-right: 30px;
+            padding: 15px;
+
+            display: flex;
+            flex-flow: column wrap;
+             .titleAside{
+                 display: block;
+                 width: 100%;
+                 p{
+                     font-family: $font;
+                     font-weight: 100;
+                     font-size: 18px;
+                     color: #444;
+                     padding-bottom: 10px;
+                     margin-bottom: 20px;
+                     border-bottom: 1px solid rgba($color: #eeeeee, $alpha: .8);
+                     text-align: center;
+                 }
+             }
+
+             .navAside ul li{
+                 padding-bottom: 20px;
+
+                 a{
+                     display: block;
+                     text-align: center;
+                     padding: 20px;
+                     background: #eeeeee;
+                     color: #444444;
+                     transition: all 300ms;
+                     text-transform: uppercase;
+                     font-family: $font;
+                 }
+                 a:hover{
+                     background-color: rgba($color: #bbbbbb, $alpha: .5);
+                     color: #2ED3FA;
+                     font-weight: bolder;
+                     letter-spacing: 1px;
+                 }
+             }
+        }
+        .galeria{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-basis: 80%;
+            .card{
+                flex-grow:1;
+                justify-content: space-between;
+                margin-bottom: 2%;
+                margin-right:33px;
+                img{
+                    width: 100%;
+                }
+                .titleCard{
+                    margin-top: -5px;
+                    padding: 5px;
+                    border: 1px solid rgba($color: #eeeeee, $alpha: .8);
+                    overflow: hidden;
+                    h4{
+                        font-family: $font;
+                        font-size: 12px;
+                        font-weight: 600;
+                        transition: all 300ms;
+                    }
+                    h3{
+                        margin-top: -5px;
+                        font-family: $font;
+                        font-size: 14px;
+                        transition: all 300ms;
+                    }
+                }
+            }
+        }
+    }
+    .footer{
+        display: flex;
+        flex-flow: row wrap;
+        margin: 5px 0;
+        align-items: center;
+        .logotipo{
+            flex-grow: 1;
+            flex-basis:60%;
+            margin-left: 30px;
+            h1{
+                font-family: $font;
+                font-style: italic;
+                font-weight: 500;
+                font-size:32px;
+                color: $Csecundary;
+                text-transform: uppercase;
+            }
+        }
+        .copy{
+            flex-basis: 25%;
+            flex-flow: row wrap;
+            margin-right: 5px;
+            p{
+                font-family: $font;
+                font-size:15px;
+            }
+        }
+    }
+}
+.titleCard h3{
+    color:$Csecundary;
+}
+.titleCard:hover{
+    background: rgba($color: #eeeeee, $alpha: 8);
+    cursor: pointer;
+     h4{
+        color: #89939c;
+        animation-name: inLeft ;
+        animation-duration: .5s;
+        animation-timing-function: linear;
+        
+     }
+    h3{
+        color: black;
+        animation-name: inBottom;
+        animation-duration: .5s;
+        animation-timing-function: linear;
+    }
+    
+}
+ @keyframes inLeft{
+     from{
+        transform: translateX(-200%);
+
+     }
+     to{
+        transform: translateX(0%);
+
+     }
+ }
+ @keyframes inBottom{
+     from{
+        transform: translateY(200%);
+     }
+     to{
+        transform: translateY(0%);
+     }
+ }
+
+ @media (max-width:1246px){
+     .container{
+         .header{
+             height: 100px;
+             .logotipo{
+                text-align: center;
+                padding-bottom: 10px;
+             }
+             .menu{
+                 flex-basis: 100%;
+                 ul{
+                     justify-content: space-evenly;
+                     align-items: flex-start;
+                 }
+             }
+         }
+         .footer{
+             .logotipo{
+                 flex-basis: 50%;
+             }
+            .copy{
+                flex-basis: 32%;
+            }
+         }
+     }
+ }
+
+ @media (max-width:746px){
+     .container{
+         .content{
+             flex-direction: column;
+             flex-basis: 100%;
+             .aside{
+                 margin: $reset;
+             }
+             .galeria{
+                 margin: $reset;
+                 .card{
+                     margin-right: 11px;
+                 }
+             }
+         }
+         .footer{
+             .logotipo{
+                 flex-basis: 40%;
+             }
+             .copy{
+                 flex-basis: 45%;
+             }
+         }
+     }
+ }
+
+ @media (max-width:676px){
+     .container{
+         .content{
+             .galeria{
+                 .card{
+                     flex-basis: 100%;
+                     .titleCard{
+                         height: 60px;
+                         h3{
+                             font-size:20px;
+                             display: block;
+                             text-align: center;
+                         }
+                         h4{
+                             font-size: 18px;
+                             display: block;
+                             text-align: center;
+                         }
+                     }
+                 }
+             }
+         }
+         .footer{
+             flex-direction: column;
+         }
+         .logotipo{
+             display: block;
+             text-align: center;
+         }
+         .copy{
+             display: block;
+             text-align: center;
+         }
+     }
+ }
